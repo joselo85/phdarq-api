@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Read -- Mostrar todos los proyectos
 app.get('/projects', (req, res) => {
-    Projects.find()
+    Project.find()
         .then((result) => {
             res.send(result)
         })
