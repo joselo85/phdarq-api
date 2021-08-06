@@ -9,6 +9,10 @@ const Project = mongoose.model('Project', {
         type: String,
         required: true
     },
+    src: {
+        type: String,
+        rquired: true
+    },
     alt: {
         type: String,
         required: true
