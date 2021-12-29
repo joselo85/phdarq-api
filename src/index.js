@@ -17,6 +17,17 @@ app.get('/projects', (req, res) => {
     .catch((err) => res.status(404).send(err))
 })
 
+// Get 1 project by ID:
+app.get('/projects/:id', (req, res) => {
+  const id = req.params.id
+  Project.findById(id)
+    .then((result) => {
+      res.set('Access-Control-Allow-Origin', '*')
+      res.send(result)
+    })
+    .catch((err) => res.status(404).send(err))
+})
+
 // Create -- Agregar Proyectos a la DB
 app.post('/project', (req, res) => {
   const project = new Project(req.body)
